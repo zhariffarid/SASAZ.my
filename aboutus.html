@@ -1,0 +1,458 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASAZ. - About Us</title>
+    <link rel="icon" type="image/jpg" sizes="20x20" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+	
+/* base segala base */
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Maven Pro", serif;
+	color: black;
+}
+
+/* navbar */
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem 5rem;
+	background-color: #f5f5f1;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+.logo {
+	font-size: 2rem;
+	font-weight: bold;
+	color: black;
+	flex: 1;
+}
+
+a {
+		color:#000;
+            text-decoration: none;
+        }
+
+.nav-container {
+	display: flex;
+	justify-content: center;
+	flex: 2;
+}
+
+.nav-links {
+	display: flex;
+	list-style: none;
+	gap: 2.5rem;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: #4c4c4c;
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	padding-bottom: 0.5rem;
+}
+
+.nav-links a:hover {
+	color: #000;
+}
+
+.nav-links a.active {
+	border-bottom: 2px solid #333;
+	color: #000;
+}
+
+.nav-icons {
+	display: flex;
+	gap: 1.5rem;
+	flex: 1;
+	justify-content: flex-end;
+}
+
+.nav-icons a {
+	text-decoration: none;
+	color: #333;
+	font-size: 1.2rem;
+}
+
+.wishlist-icon::before {
+	content: "♡";
+	font-size: 2rem;
+}
+
+.cart-icon::before {
+	content: "🛍️";
+	font-size: 1.5rem;
+}
+
+/* about us */
+.about-header {
+	margin-top: 100px;
+	text-align: center;
+	padding: 60px 20px;
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/aboutusbg.jpg');
+	background-size: cover;
+	background-position: center;
+	color: white;
+}
+
+.about-header h1 {
+	font-size: 3.5rem;
+	margin-bottom: 1rem;
+}
+
+/* mission values */
+.mission-values {
+	max-width: 1200px;
+	margin: 60px auto;
+	padding: 0 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+}
+
+.section-card {
+	background: white;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-card h2 {
+	color: #333;
+	font-size: 2rem;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.section-card p {
+	color: #666;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+/* bahagian team */
+.team-section {
+	max-width: 1200px;
+	margin: 60px auto;
+	padding: 0 20px;
+
+}
+
+.team-section {
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+.team-heading {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #333;
+}
+
+.team-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team-table th,
+.team-table td {
+    padding: 20px;
+    border: 2px solid #cccccc; 
+}
+
+.team-table th {
+    background: #00ced1;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.team-table td {
+    vertical-align: top;
+    background: #fff;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+
+.role {
+	font-weight: bold;
+	color: #333;
+	margin: 10px 0;
+}
+
+.story {
+	color: #666;
+	line-height: 1.6;
+	margin: 15px 0;
+}
+
+.benefits {
+	list-style: none;
+	padding: 0;
+	margin: 15px 0;
+}
+
+.benefits li {
+	color: #00ced1;
+	margin: 5px 0;
+	font-weight: 500;
+}
+
+/* footer */
+footer {
+    background: black;
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #00ced1;
+}
+
+.footer-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border: 1px solid #404040;
+    border-radius: 5px;
+}
+
+.social-link:hover {
+    color: #00ced1;
+    border-color: #00ced1;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #404040;
+    padding-top: 1rem;
+    color: #808080;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+	.mission-values {
+		grid-template-columns: 1fr;
+	}
+	
+	.team-table {
+		display: block;
+		overflow-x: auto;
+	}
+
+	.about-header h1 {
+		font-size: 2.5rem;
+	}
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #00ced1;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.back-to-top:hover {
+    background: #008b8b;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">SASAZ.</div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menspage.html">Men</a></li>
+                <li><a href="womenspage.html">Women</a></li>
+                <li><a href="kidspage.html">Kids</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-icons">
+            <a href="#wishlist" class="wishlist-icon" title="Wishlist"></a>
+            <a href="#cart" class="cart-icon" title="Cart"></a>
+        </div>
+    </nav>
+
+    <header class="about-header">
+        <h1>Our Story</h1>
+    </header>
+
+    <section class="mission-values">
+        <div class="section-card">
+            <h2>Our Mission</h2>
+            <p>At SASAZ, we believe that every athlete deserves the best equipment to achieve their goals. Our mission is to provide high-quality sportswear that combines style, comfort, and performance.</p>
+            <p>We work tirelessly to create products that help athletes of all levels push their boundaries and reach new heights in their sporting journey.</p>
+        </div>
+
+        <div class="section-card">
+            <h2>Our Values</h2>
+            <p>Quality is at the heart of everything we do. We source the finest materials and work with skilled craftsmen to ensure every product meets our high standards.</p>
+            <p>Sustainability and ethical production are core principles that guide our manufacturing process, ensuring we leave a positive impact on both people and the planet.</p>
+        </div>
+    </section>
+
+  <section class="team-section">
+    <h2 class="team-heading">Meet Our Team</h2>
+    <table class="team-table">
+        <tr>
+            <th colspan="5">Leadership Team</th>
+        </tr>
+        <tr>
+            <td>
+                <img src="images/sharlin.JPG" class="profile-img">
+				 <div class="role">SHARLIN</div>
+                <div class="role">- HR -</div>
+                <div class="role">- Human Resources -</div>
+                <div class="story">I was assigned in managing the human resource operations of sports organisations is my responsibility in sports management.
+				Keeping talented employees—from coaches and players to support and administrative staff—are important duties. I will make sure labour laws and ethical standards are followed. </div>
+				<div class="role">Traits:</div>
+                <ul class="benefits">
+                    <li>• Recruiting</li>
+                    <li>• Payroll</li>
+                </ul>
+            </td>
+            <td>
+                <img src="images/zharif.JPEG" class="profile-img">
+				<div class="role">ZHARIF</div>
+                <div class="role">- Head Of Web Design -</div>
+                <div class="role">- Personal Trainer -</div>
+                <div class="story">I'm really into fitness and web design. I enjoy challenging myself in sports and apply that same energy to building simple, effective websites.
+				Both passions keep me motivated to keep learning and improving in everything I do.</div>
+				<div class="role">Traits:</div>
+                <ul class="benefits">
+                    <li>• Focus & Discipline</li>
+                    <li>• Creativity</li>
+                    <li>• Goal-Driven</li>
+                </ul>
+            </td>
+            <td>
+                <img src="images/aman.jpg" class="profile-img">
+				<div class="role">AMANI</div>
+                <div class="role">- CEO -</div>
+                <div class="role">- Chief Executive Officer -</div>
+                <div class="story">I want to make strategic decisions that not only steer the business in the right direction but also leave a long-term impact on the industry.
+				It’s about creating a vision, aligning people behind it, and making tough decisions with confidence.
+				</div>
+				<div class="role">Traits:</div>
+                <ul class="benefits">
+                    <li>• Leadership and Vision</li>
+                    <li>• ⁠Financial Rewards</li>
+                    <li>• Prestige and Recognition</li>
+                </ul>
+            </td>
+            <td>
+                <img src="images/pina.jpg" class="profile-img">
+				 <div class="role">AFRINA</div>
+                <div class="role">- CMO -</div>
+                <div class="role">- Chief Marketing Officer -</div>
+                <div class="story">Marketing is about understanding what inspires and motivates audiences and transforming those insights into campaigns that leave a lasting impression.
+				As a CMO, I’d have the opportunity to shape the brand’s story, foster meaningful connections, and lead a talented team toward impactful goals.</div>
+				<div class="role">Traits:</div>
+                <ul class="benefits">
+                    <li>• High-level Responsibility</li>
+                    <li>• Professional Growth</li>
+                    <li>• Strategic Influence</li>
+                </ul>
+            </td>
+            <td>
+                <img src="images/suffi.JPG" class="profile-img">
+				 <div class="role">SUFFI</div>
+                <div class="role">- Staff -</div>
+                <div class="role">- Member -</div>
+                <div class="story">As a staff member in a sportswear company, my role is to combine my passion for fitness and web design to contribute meaningfully to the team.
+				Supporting marketing efforts, or contributing ideas for user-friendly web experiences, I bring the same dedication and energy I apply in sports.</div>
+				<div class="role">Traits:</div>
+                <ul class="benefits">
+                    <li>• Personal Growth</li>
+                    <li>• Professional Experience</li>
+                    <li>• Employee Perks</li>
+                </ul>
+            </td>
+			</tr>
+		</table>
+	</section>
+
+
+
+
+    <footer>
+    <div class="footer-container">
+        <h2 class="footer-title">About Us</h2>
+        <p class="footer-subtitle">Quality is at the heart of everything we do.</p>
+        
+        <div class="social-links">
+            <a href="https://tiktok.com/artbyzf" class="social-link">Tiktok</a>
+            <a href="https://twitter.com/sasaz" class="social-link">Twitter</a>
+            <a href="https://instagram.com/zhariffarid" class="social-link">Instagram</a>
+            <a href="mailto:contact@sasaz.com" class="social-link">Email</a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 SASAZ concept store. All rights reserved.</p>
+        </div>
+    </div>
+	</footer>
+	
+<a href="#" class="back-to-top">↑</a>
+</body>
+</html>

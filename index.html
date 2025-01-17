@@ -1,0 +1,423 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASAZ. - Sports Clothing</title>
+	<link rel="icon" type="image/jpg" sizes="20x20" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+<style>
+
+/* base segala base */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Maven Pro", serif;
+    color: black;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5rem;
+    background-color: #f5f5f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    flex: 1;
+}
+
+a {
+		color:#000;
+            text-decoration: none;
+        }
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    flex: 2;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4c4c4c;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding-bottom: 0.5rem;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid #333;
+    color: #000;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.nav-icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.wishlist-icon::before {
+    content: "♡";
+    font-size: 2rem;
+}
+
+.cart-icon::before {
+    content: "🛍️";
+    font-size: 1.5rem;
+}
+
+/* hero text and background */
+#home {
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero {
+	font-size: 1.5rem;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 1rem 2.5rem;
+	background: #00ced1;
+	color: white;
+	text-decoration: none;
+	border-radius: 30px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	position: relative;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
+}
+
+.cta-button:hover {
+	background: transparent;
+	border-color: white;
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.cta-button:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+	scroll-padding-top: 95px;
+}
+
+/* barang */
+.products {
+    background: #767676;
+    position: relative;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.visit {
+    background: #00ced1;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;  
+}
+
+.visit:hover {
+    background: #008b8b;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: #767676;
+    text-align: center;
+}
+
+/* footer */
+footer {
+    background: black;
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #00ced1;
+}
+
+.footer-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border: 1px solid #404040;
+    border-radius: 5px;
+}
+
+.social-link:hover {
+    color: #00ced1;
+    border-color: #00ced1;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #404040;
+    padding-top: 1rem;
+    color: #808080;
+    font-size: 0.9rem;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #00ced1;
+    color: white;
+    padding: 20px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.back-to-top:hover {
+    background: #008b8b;
+}
+
+</style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">SASAZ.</div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="menspage.html">Men</a></li>
+                <li><a href="womenspage.html">Women</a></li>
+                <li><a href="kidspage.html">Kids</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-icons">
+            <a href="#wishlist" class="wishlist-icon" title="Wishlist"></a>
+            <a href="#cart" class="cart-icon" title="Cart"></a>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="videos/bgvideo.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero">
+            <p id="welcomeMessage" style="font-size: 1.5rem; margin-bottom: 1rem;"></p>
+            <h1>Wear It, Be A Winner</h1>
+            <p>Premium sportswear for the best athletes</p>
+            <p></p>
+            <a href="aboutus.html" class="cta-button">About Us</a>
+        </div>
+    </header>
+
+     <section id="products" class="products">
+        <h2>CHECK IT OUT!</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image"><img src="images/men.jpg" alt="Men's Collection"></div>
+                <h3>MEN</h3>
+                <a href="menspage.html" class="visit">VISIT</a>
+            </div>
+			
+            <div class="product-card">
+                <div class="product-image"><img src="images/women.jpg" alt="Women's Collection"></div>
+                <h3>WOMEN</h3>
+                <a href="womenspage.html" class="visit">VISIT</a>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="images/kids.jpg" alt="Kids' Collection"></div>
+                <h3>KIDS</h3>
+                <a href="kidspage.html" class="visit">VISIT</a>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="images/accessories.jpg" alt="Accessories"></div>
+                <h3>ACCESSORIES</h3>
+               <a href="accessories.html" class="visit">VISIT</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3>Premium Quality</h3>
+            <p>Our product combines style, functionality, and durability.</p>
+        </div>
+        <div class="feature">
+            <h3>Fast Shipping</h3>
+            <p>Free delivery on orders over RM100</p>
+        </div>
+        <div class="feature">
+            <h3>30-Day Returns</h3>
+            <p>We offer easy returns and refunds for any problem items.</p>
+        </div>
+    </section>
+
+    <footer>
+    <div class="footer-container">
+        <h2 class="footer-title">About Us</h2>
+        <p class="footer-subtitle">Quality is at the heart of everything we do.</p>
+        
+        <div class="social-links">
+            <a href="https://tiktok.com/artbyzf" class="social-link" target="_blank">Tiktok</a>
+            <a href="https://twitter.com/sasaz" class="social-link" target="_blank">Twitter</a>
+            <a href="https://instagram.com/sasaz.conceptmy" class="social-link" target="_blank">Instagram</a>
+            <a href="mailto:contact@sasaz.com" class="social-link" target="_blank">Email</a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 SASAZ concept store. All rights reserved.</p>
+        </div>
+    </div>
+	</footer>
+	
+	 <script>
+    window.onload = function() {
+        let name = prompt("Welcome, Please Enter Your Name");
+        if (name) {
+            document.getElementById('welcomeMessage').innerHTML = `Welcome, <strong>${name}</strong>!`;
+        }
+    }
+    </script>
+
+<a href="#" class="back-to-top">↑</a>
+</body>
+</html>
